@@ -14,7 +14,7 @@ from setuptools import setup
 
 setup(
     name='Bootstrap-Flask',
-    version='1.5',
+    version='1.6',
     url='https://github.com/gbrault/bootstrap-flask',
     license='MIT',
     author='Grey Li',
