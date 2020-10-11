@@ -7,7 +7,7 @@ Bootstrap-Flask
 
 If you come from Flask-Bootstrap, check out [this tutorial](https://bootstrap-flask.readthedocs.io/en/latest/migrate.html) on how to migrate to this extension.
 
-Go to [GitHub page](https://github.com/greyli/bootstrap-flask), which you
+Go to [GitHub page](https://github.com/gbrault/bootstrap-flask), which you
 can check for more details.
 """
 from setuptools import setup
@@ -15,7 +15,7 @@ from setuptools import setup
 setup(
     name='Bootstrap-Flask',
     version='1.5',
-    url='https://github.com/greyli/bootstrap-flask',
+    url='https://github.com/gbrault/bootstrap-flask',
     license='MIT',
     author='Grey Li',
     author_email='withlihui@gmail.com',
