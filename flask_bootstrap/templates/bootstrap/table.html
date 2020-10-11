@@ -40,7 +40,7 @@
         {% if title[0] == primary_key %}
           <th scope="row">{{ row[title[0]] }}</th>
         {% else %}
-          <td>{{ row[title[0]]|truncate }}</td>
+          <td>{{ row[title[0]] }}</td>
         {% endif %}
       {% endfor %}
       {% if show_actions %}
