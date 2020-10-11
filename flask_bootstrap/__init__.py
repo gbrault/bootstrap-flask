@@ -6,6 +6,7 @@
     :license: MIT, see LICENSE for more details.
 """
 from flask import current_app, Markup, Blueprint, url_for
+import textwrap
 
 try:
     from wtforms.fields import HiddenField
@@ -36,6 +37,11 @@ def get_table_titles(data, primary_key, primary_key_title):
     titles[0] = (primary_key, primary_key_title)
     return titles
 
+def struncate(s,l):
+    if isinstance(s, str):
+        return textwrap.shorten(s,width=l)
+    else:
+        return s
 
 class Bootstrap(object):
     def __init__(self, app=None):
@@ -56,6 +62,8 @@ class Bootstrap(object):
         app.jinja_env.globals['bootstrap_is_hidden_field'] = is_hidden_field_filter
         app.jinja_env.globals['get_table_titles'] = get_table_titles
         app.jinja_env.add_extension('jinja2.ext.do')
+        # add struncate filter
+        app.jinja_env.filters["struncate"] = struncate
         # default settings
         app.config.setdefault('BOOTSTRAP_SERVE_LOCAL', False)
         app.config.setdefault('BOOTSTRAP_BTN_STYLE', 'primary')
