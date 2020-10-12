@@ -13,6 +13,7 @@
                       view_url=None,
                       edit_url=None,
                       delete_url=None,
+                      add_url=None,
                       action_pk_placeholder=':primary_key') %}
   {% if not titles %}
     {% set titles = get_table_titles(data, primary_key, primary_key_title) %}
@@ -48,6 +49,9 @@
         <td>
           {% if view_url %}
             <a href="{{ view_url | replace(action_pk_placeholder, row[primary_key]) }}"><img src="{{ url_for('bootstrap.static', filename='img/view.svg') }}" alt="View"></a>
+          {% endif %}
+          {% if add_url %}
+            <a href="{{ add_url | replace(action_pk_placeholder, row[primary_key]) }}"><img src="{{ url_for('bootstrap.static', filename='img/add.svg') }}" alt="Add"></a>
           {% endif %}
           {% if edit_url %}
             <a href="{{ edit_url | replace(action_pk_placeholder, row[primary_key]) }}"><img src="{{ url_for('bootstrap.static', filename='img/edit.svg') }}" alt="Edit"></a>
